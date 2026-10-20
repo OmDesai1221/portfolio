@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Om Desai — Software Development Engineer & Data Analyst</title>
+<meta name="description" content="Om Desai is a Mumbai-based freelance Software Development Engineer and Data Analyst building ordering and delivery systems, financial automation, Power BI dashboards and SEO-ready websites.">
+<meta name="keywords" content="Om Desai, Freelance Software Developer Mumbai, Software Development Engineer, Data Analyst, Power BI, Python, SQL, Snowflake, Ordering System, Delivery Tracking, SEO, Freelance Developer">
+<meta name="author" content="Om Desai">
+<meta property="og:title" content="Om Desai — Software Development Engineer & Data Analyst">
+<meta property="og:description" content="Ordering & delivery systems, financial data automation, BI dashboards and SEO. Available for freelance projects.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23ff6b35'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='white'>OD</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Om Desai",
+  "jobTitle": "Software Development Engineer & Data Analyst",
+  "email": "mailto:omdesai02@gmail.com",
+  "telephone": "+91-87799-71812",
+  "address": {"@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN"},
+  "sameAs": ["https://linkedin.com/in/om-desai07", "https://github.com/OmDesai1221"],
+  "knowsAbout": ["Data Analytics", "Power BI", "Python", "SQL", "Snowflake", "REST APIs", "Flask", "GIS", "SEO", "Automation"]
+}
+</script>
+<style>
+:root{
+  --bg:#f6f4ef; --surface:#ffffff; --surface-2:#efece5; --ink:#14161a; --muted:#5d6370;
+  --line:#e2ded5; --accent:#ff6b35; --accent-ink:#ffffff; --accent-soft:#ffe6db; --good:#1f9d6b;
+  --shadow:0 1px 2px rgba(20,22,26,.04),0 8px 30px rgba(20,22,26,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1115; --surface:#171a20; --surface-2:#1e222a; --ink:#f1efe9; --muted:#9aa1ad;
+    --line:#272c35; --accent:#ff7a45; --accent-ink:#14161a; --accent-soft:#2b1d17; --good:#38c48b;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --surface:#171a20; --surface-2:#1e222a; --ink:#f1efe9; --muted:#9aa1ad;
+  --line:#272c35; --accent:#ff7a45; --accent-ink:#14161a; --accent-soft:#2b1d17; --good:#38c48b;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.1;letter-spacing:-.02em}
+.mono{font-family:"JetBrains Mono",monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--accent);color:var(--accent-ink);padding:8px 12px;border-radius:8px;z-index:99}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:700;font-size:18px}
+.logo{width:34px;height:34px;border-radius:10px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:14px}
+.links{display:flex;gap:28px;align-items:center;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.menu-btn{display:none}
+@media (max-width:760px){
+  .links{position:fixed;inset:64px 0 auto 0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .3s}
+  .links.open{transform:none}
+  .links a{padding:16px 20px;width:100%;border-top:1px solid var(--line)}
+  .menu-btn{display:grid}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:600;font-size:15px;transition:transform .15s,box-shadow .15s;border:1px solid transparent}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 8px 24px color-mix(in srgb,var(--accent) 35%,transparent)}
+.btn-ghost{border-color:var(--line);background:var(--surface)}
+
+/* hero */
+.hero{padding-top:88px;padding-bottom:64px}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:99px;background:var(--surface);border:1px solid var(--line);font-size:13px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px color-mix(in srgb,var(--good) 25%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px color-mix(in srgb,var(--good) 5%,transparent)}}
+.hero h1{font-size:clamp(40px,7vw,80px);margin:10px 0 20px;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .role{font-family:"Space Grotesk";font-weight:600;font-size:clamp(17px,2vw,21px);margin-top:26px}
+.hero p.lead-2{margin-top:12px;font-size:clamp(15px,1.6vw,17px)}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:58ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:64px}
+.stat{background:var(--surface);padding:24px}
+.stat b{display:block;font-family:"Space Grotesk";font-size:36px;letter-spacing:-.03em}
+.stat span{font-size:13px;color:var(--muted)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);padding:18px 0;overflow:hidden;background:var(--surface)}
+.track{display:flex;gap:48px;width:max-content;animation:scroll 32s linear infinite;font-family:"Space Grotesk";font-size:20px;color:var(--muted);white-space:nowrap}
+.track span::before{content:"✦";color:var(--accent);margin-right:48px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:96px 0}
+.eyebrow{font-family:"JetBrains Mono";font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:44px}
+.sec-head h2{font-size:clamp(30px,4.5vw,48px);margin-top:10px;max-width:20ch}
+.sec-head p{color:var(--muted);max-width:42ch}
+
+/* projects */
+.project>*{min-width:0}
+.project{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;margin-bottom:24px;box-shadow:var(--shadow)}
+.project:nth-of-type(even) .visual{order:2}
+@media (max-width:860px){.project{grid-template-columns:1fr;padding:20px}.project:nth-of-type(even) .visual{order:0}}
+@media (max-width:520px){.visual{aspect-ratio:auto;height:320px;padding:12px;width:100%;min-width:0}.row{gap:8px}.row span:first-child{min-width:0}}
+.visual{aspect-ratio:4/3;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);position:relative;overflow:hidden;padding:18px}
+.p-meta{display:flex;justify-content:space-between;font-family:"JetBrains Mono";font-size:12px;color:var(--muted);margin-bottom:14px}
+.project h3{font-size:clamp(24px,3vw,32px);margin-bottom:12px}
+.project p{color:var(--muted)}
+.impact{margin:18px 0;padding:14px 16px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;font-size:14px;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{font-size:12px;padding:5px 10px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--muted)}
+.p-links{display:flex;gap:16px;margin-top:22px;font-weight:600;font-size:14px}
+.p-links a{color:var(--accent)} .p-links a:hover{text-decoration:underline}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:var(--accent);color:var(--accent-ink);margin-bottom:10px}
+
+/* mock visuals */
+.win{background:var(--surface);border:1px solid var(--line);border-radius:12px;height:100%;display:flex;flex-direction:column;overflow:hidden}
+.win-bar{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.win-bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.win-body{flex:1;padding:14px;display:flex;flex-direction:column;gap:10px;font-size:12px}
+.route{position:relative;flex:1;border-radius:10px;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/22px 22px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/22px 22px;opacity:.95}
+.route svg{position:absolute;inset:0;width:100%;height:100%}
+.row{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg);border-radius:8px;border:1px solid var(--line)}
+.pill{font-size:10px;padding:2px 8px;border-radius:99px;font-weight:600}
+.pill.ok{background:color-mix(in srgb,var(--good) 18%,transparent);color:var(--good)}
+.pill.go{background:var(--accent-soft);color:var(--accent)}
+.bars{display:flex;align-items:end;gap:8px;flex:1;padding-top:6px}
+.bars div{flex:1;background:var(--accent);border-radius:6px 6px 2px 2px;opacity:.85;transform-origin:bottom;animation:grow 1.2s ease-out both}
+.bars div:nth-child(odd){opacity:.45}
+@keyframes grow{from{transform:scaleY(0)}}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px}
+.kpi b{font-family:"Space Grotesk";font-size:16px;display:block}
+.kpi span{color:var(--muted);font-size:10px}
+
+/* other work grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+@media (max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card h3{font-size:20px;margin:12px 0 8px}
+.card p{color:var(--muted);font-size:14px}
+.card .ic{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:20px}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+@media (max-width:860px){.services{grid-template-columns:1fr}}
+.svc{background:var(--surface);padding:30px}
+.svc .n{font-family:"JetBrains Mono";color:var(--accent);font-size:13px}
+.svc h3{font-size:21px;margin:14px 0 10px}
+.svc p{color:var(--muted);font-size:14.5px}
+
+/* case study rows */
+.cs{display:grid;gap:10px;margin:18px 0 4px}
+.cs div{display:grid;grid-template-columns:88px 1fr;gap:12px;font-size:14.5px;color:var(--muted)}
+.cs b{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);padding-top:3px}
+.feat{list-style:none;display:grid;gap:6px;margin-top:2px}
+.feat li{padding-left:18px;position:relative}
+.feat li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+@media (max-width:520px){.cs div{grid-template-columns:1fr;gap:2px}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:st}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}
+.step::before{counter-increment:st;content:"0" counter(st);font-family:"JetBrains Mono";font-size:13px;color:var(--accent)}
+.step h3{font-size:19px;margin:12px 0 8px}
+.step p{color:var(--muted);font-size:14.5px}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:start}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+.about-lead{font-size:clamp(18px,2.2vw,22px);line-height:1.55}
+.about-lead span{color:var(--muted)}
+.facts{display:grid;gap:14px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.fact .k{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.fact h3{font-size:19px;margin:8px 0 6px}
+.fact p{color:var(--muted);font-size:14.5px}
+.now{display:block;margin-top:18px;font-size:14px;color:var(--muted)}
+.now b{color:var(--ink)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:760px){.skills{grid-template-columns:1fr}}
+.skill-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.skill-box h4{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.certs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+@media (max-width:860px){.certs{grid-template-columns:repeat(2,1fr)}}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:14px;font-weight:500}
+.cert span{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:4px}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-radius:28px;padding:clamp(32px,6vw,72px);position:relative;overflow:hidden}
+.contact::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--accent);filter:blur(120px);opacity:.35;right:-120px;top:-160px}
+.contact h2{font-size:clamp(34px,5.5vw,64px);max-width:15ch;position:relative;z-index:1}
+.contact p{opacity:.7;margin:16px 0 30px;max-width:48ch;position:relative;z-index:1}
+.c-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;position:relative;z-index:1}
+@media (max-width:760px){.c-grid{grid-template-columns:1fr}}
+.c-item{border:1px solid color-mix(in srgb,var(--bg) 20%,transparent);border-radius:16px;padding:18px;transition:background .2s}
+.c-item:hover{background:color-mix(in srgb,var(--bg) 8%,transparent)}
+.c-item small{opacity:.6;font-size:12px;display:block;font-family:"JetBrains Mono"}
+.c-item b{font-weight:600;word-break:break-all}
+.copy{margin-top:8px;font-size:12px;background:none;border:1px solid color-mix(in srgb,var(--bg) 25%,transparent);color:inherit;border-radius:8px;padding:4px 10px;cursor:pointer}
+
+footer{padding:40px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a href="#" class="brand"><span class="logo">OD</span>Om Desai</a>
+      <div class="links" id="links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="icon-btn" id="theme" aria-label="Toggle dark mode">◐</button>
+        <button class="icon-btn menu-btn" id="menu" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <div class="wrap hero">
+    <span class="tag"><span class="dot"></span>Available for freelance projects · Mumbai / Remote</span>
+    <p class="role">Software Development Engineer &amp; Data Analyst</p>
+    <h1>I build the systems that keep a business <em>moving.</em></h1>
+    <p class="lead">I help businesses replace manual work and scattered spreadsheets with software they own: ordering and delivery systems, automated monthly reports, clear dashboards and websites that show up on Google.</p>
+    <p class="lead lead-2">You get a fixed quote before work starts, regular updates while I build, and support after launch.</p>
+    <div class="cta">
+      <a href="#work" class="btn btn-primary">View my work →</a>
+      <a href="#contact" class="btn btn-ghost">Discuss your project</a>
+    </div>
+    <div class="now">Also working as <b>Software Development Engineer &amp; Data Analyst at Aventior</b></div>
+    <div class="stats">
+      <div class="stat"><b data-count="200">200</b><span>+ secure API exchanges / day</span></div>
+      <div class="stat"><b data-count="15">15</b><span>+ KPI dashboards delivered</span></div>
+      <div class="stat"><b data-count="65">65</b><span>% faster data processing</span></div>
+      <div class="stat"><b data-count="8">8</b><span>TB of enterprise data cleaned</span></div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Ordering Systems</span><span>Delivery Tracking</span><span>Financial Automation</span><span>Power BI</span><span>REST APIs</span><span>SEO</span><span>Snowflake</span><span>Python & SQL</span>
+      <span>Ordering Systems</span><span>Delivery Tracking</span><span>Financial Automation</span><span>Power BI</span><span>REST APIs</span><span>SEO</span><span>Snowflake</span><span>Python & SQL</span>
+    </div>
+  </div>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="eyebrow">Selected work</div><h2>Things I've built and shipped</h2></div>
+        <p>Real client work, each told as the problem, what I built, and what changed.</p>
+      </div>
+
+      <!-- Project 1: Berain -->
+      <article class="project reveal">
+        <div class="visual">
+          <div class="win">
+            <div class="win-bar"><i></i><i></i><i></i></div>
+            <div class="win-body">
+              <div class="row"><b>Order #48213</b><span class="pill go">Out for delivery</span></div>
+              <div class="route">
+                <svg viewBox="0 0 300 140" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M20 115 C 80 110, 90 40, 150 55 S 230 100, 280 25" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="6 6">
+                    <animate attributeName="stroke-dashoffset" from="120" to="0" dur="3s" repeatCount="indefinite"/>
+                  </path>
+                  <circle cx="20" cy="115" r="7" fill="var(--ink)"/>
+                  <circle cx="280" cy="25" r="8" fill="var(--accent)"/>
+                  <circle r="6" fill="var(--good)"><animateMotion dur="5s" repeatCount="indefinite" path="M20 115 C 80 110, 90 40, 150 55 S 230 100, 280 25"/></circle>
+                </svg>
+              </div>
+              <div class="row"><span>Driver assigned · ETA</span><span class="pill ok">Live</span></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="badge">Flagship project</span>
+          <div class="p-meta"><span>01 · Ordering & Logistics</span><span>01 / 03</span></div>
+          <h3>Ordering System & Delivery Tracking — Berain Water</h3>
+          <p>Berain Water is a bottled-water company in Saudi Arabia that delivers directly to homes and businesses.</p>
+          <div class="cs">
+            <div><b>Problem</b><span>Orders and deliveries needed one system the business owned, with visibility from the moment an order is placed to the moment it reaches the door.</span></div>
+            <div><b>Built</b><span>The ordering system and Berain's own delivery tracking program: customers place orders, operations assign and dispatch them, and every delivery is tracked through to completion.</span></div>
+          </div>
+          <div class="impact">End-to-end order flow and live delivery visibility, owned in-house</div>
+          <div class="chips"><span class="chip">Order Management</span><span class="chip">Delivery Tracking</span><span class="chip">REST APIs</span><span class="chip">Data Modeling</span><span class="chip">Dashboards</span></div>
+          <div class="p-links"><a href="https://berain.com.sa/?lang=en" target="_blank" rel="noopener">Client site ↗</a></div>
+        </div>
+      </article>
+
+      <!-- Project 2: Financial Auto -->
+      <article class="project reveal">
+        <div class="visual">
+          <div class="win">
+            <div class="win-bar"><i></i><i></i><i></i></div>
+            <div class="win-body">
+              <div class="kpis">
+                <div class="kpi"><b>P&amp;L</b><span>Statement</span></div>
+                <div class="kpi"><b>FIFO</b><span>Stock costing</span></div>
+                <div class="kpi"><b>GL</b><span>Code matched</span></div>
+              </div>
+              <div class="bars">
+                <div style="height:40%"></div><div style="height:55%"></div><div style="height:48%"></div><div style="height:70%"></div><div style="height:62%"></div><div style="height:85%"></div><div style="height:78%"></div><div style="height:95%"></div>
+              </div>
+              <div class="row"><span>Oct added · backed up</span><span class="pill ok">Reviewed</span></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="p-meta"><span>02 · Finance Automation</span><span>02 / 03</span></div>
+          <h3>Monthly Financial Update Tool</h3>
+          <p>A web tool for a chemicals manufacturer that turns each month's general-ledger export into their updated P&amp;L statement and FIFO stock-costing workbooks.</p>
+          <div class="cs">
+            <div><b>Problem</b><span>Every month the finance team copied a new trial balance into two complex Excel workbooks by hand, where one wrong row breaks the totals.</span></div>
+            <div><b>Built</b><ul class="feat">
+              <li>Upload once; rows are matched by GL code, new accounts are inserted in place and the new month is added as a column</li>
+              <li>Formulas for subtotals, year-to-date figures and the FIFO stock roll-forward carry forward automatically</li>
+              <li>A review page shows where every value came from before anything is saved; nothing is guessed</li>
+              <li>Automatic backups, one-click undo, full history and a "replace latest month" option for corrected data</li>
+            </ul></div>
+          </div>
+          <div class="impact">Month-end P&amp;L and stock reporting in one upload, with a review step and undo</div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">openpyxl</span><span class="chip">Excel Automation</span><span class="chip">Data Validation</span></div>
+          <div class="p-links"><a href="https://github.com/OmDesai1221/Financial_auto" target="_blank" rel="noopener">GitHub ↗</a></div>
+        </div>
+      </article>
+
+      <!-- Project 3: StockGuider -->
+      <article class="project reveal">
+        <div class="visual">
+          <div class="win">
+            <div class="win-bar"><i></i><i></i><i></i></div>
+            <div class="win-body">
+              <div class="row"><b>Portfolio · 30-day trend</b><span class="pill go">AI analysis</span></div>
+              <div class="route" style="background:none;border:1px solid var(--line)">
+                <svg viewBox="0 0 300 140" preserveAspectRatio="none" aria-hidden="true">
+                  <polyline points="0,110 30,95 60,100 90,70 120,80 150,50 180,60 210,35 240,45 270,20 300,28" fill="none" stroke="var(--good)" stroke-width="3"/>
+                  <polyline points="0,110 30,95 60,100 90,70 120,80 150,50 180,60 210,35 240,45 270,20 300,28 300,140 0,140" fill="var(--good)" opacity=".12"/>
+                </svg>
+              </div>
+              <div class="row"><span>HOLD · 75% confidence</span><span class="pill ok">Reasoned</span></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="p-meta"><span>03 · Markets · AI</span><span>03 / 03</span></div>
+          <h3>StockGuider</h3>
+          <p>An AI-assisted stock portfolio analyzer that helps users track their holdings and understand each stock before they act.</p>
+          <div class="cs">
+            <div><b>Problem</b><span>Beginners hold stocks without a clear view of how each one is performing or why they should buy, hold or sell it.</span></div>
+            <div><b>Built</b><ul class="feat">
+              <li>Add holdings with shares, buy price and date, and set an investment budget</li>
+              <li>Live prices and 30-day price charts for every stock</li>
+              <li>AI analysis that gives a buy, hold or sell view with a confidence level and plain-English reasoning</li>
+              <li>Portfolios stored per user with row-level security</li>
+            </ul></div>
+          </div>
+          <div class="impact">Turns raw price data into a clear, explained recommendation</div>
+          <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">Recharts</span><span class="chip">Alpha Vantage API</span><span class="chip">OpenAI</span><span class="chip">Tailwind</span></div>
+          <div class="p-links"><a href="https://github.com/OmDesai1221/StockGuider" target="_blank" rel="noopener">GitHub ↗</a></div>
+        </div>
+      </article>
+
+      <div class="eyebrow reveal" style="margin-top:56px">More projects</div>
+      <div class="grid">
+        <div class="card reveal"><div class="ic">◎</div><h3>EngEase</h3><p>AI career analytics platform — resume review at 90% accuracy and adaptive mock interviews, trained on 1,000+ career trajectories.</p></div>
+        <div class="card reveal"><div class="ic">▲</div><h3>Landslide Detection (GIS)</h3><p>GIS and geospatial analysis of satellite imagery to map 1,200+ landslide events, with a detection model at 89% precision for early risk assessment.</p></div>
+        <div class="card reveal"><div class="ic">+</div><h3>Hospital Management Agent</h3><p>AI agent for patient triage that cut average wait times by 40%, with ML insurance checks speeding claims by 60%.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="eyebrow">What I do</div><h2>From raw data to a live product</h2></div>
+        <p>One person across the whole build — backend, data, dashboards and getting found online.</p>
+      </div>
+      <div class="services reveal">
+        <div class="svc"><div class="n">01</div><h3>Ordering & Logistics Systems</h3><p>Order management, dispatch and delivery tracking platforms built around how your operation really runs.</p></div>
+        <div class="svc"><div class="n">02</div><h3>Backend & API Development</h3><p>Secure REST APIs and integrations (SFA, SAP and more) that move data reliably between systems.</p></div>
+        <div class="svc"><div class="n">03</div><h3>Financial & Data Automation</h3><p>Monthly uploads, validations and calculations automated so reports are ready without manual work.</p></div>
+        <div class="svc"><div class="n">04</div><h3>Dashboards & BI</h3><p>KPIs tied to business goals, delivered as clear Power BI dashboards for leadership and teams.</p></div>
+        <div class="svc"><div class="n">05</div><h3>Data Engineering</h3><p>ETL pipelines, Snowflake, schema design and query tuning — I've cut response times by 30%.</p></div>
+        <div class="svc"><div class="n">06</div><h3>SEO</h3><p>Technical and on-page SEO — metadata, structured data, speed and content structure — so your site gets found.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="eyebrow">How we'd work together</div><h2>Simple, clear and on schedule</h2></div>
+        <p>No jargon and no surprises. You always know what's being built, what it costs and when it's ready.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>Free call</h3><p>A 20-minute call to understand your business and what's slowing you down. No commitment.</p></div>
+        <div class="step reveal"><h3>Plan &amp; fixed quote</h3><p>A written plan with what I'll build, the timeline and a fixed price, agreed before any work starts.</p></div>
+        <div class="step reveal"><h3>Build with updates</h3><p>You see progress every week and can give feedback as it takes shape, not only at the end.</p></div>
+        <div class="step reveal"><h3>Launch &amp; support</h3><p>I set it up, show your team how to use it and stay available for fixes and changes after launch.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="eyebrow">About</div><h2>Engineer by training, builder by habit</h2></div>
+      </div>
+      <div class="about">
+        <div class="reveal">
+          <p class="about-lead">I'm Om, a Mumbai-based engineer who works where software meets business data. <span>I like problems that start as a messy spreadsheet or a manual process and end as a system people rely on every day: an ordering platform, an automated month-end report, a dashboard leadership actually opens.</span></p>
+          <p class="about-lead" style="margin-top:18px"><span>Before working on client systems, I co-founded a beverage startup, which is where I learned to think about the business first and the code second.</span></p>
+        </div>
+        <div class="facts">
+          <div class="fact reveal"><div class="k">Founder</div><h3>Khaas Chaas · Co-founder &amp; Product Manager</h3><p>Co-founded a beverage startup (2023–24), led technical product development, launched the website and set up a supply-chain tracking system.</p></div>
+          <div class="fact reveal"><div class="k">Education</div><h3>B.Tech, Information Technology</h3><p>K.J. Somaiya College of Engineering, Mumbai.</p></div>
+          <div class="fact reveal"><div class="k">Beyond work</div><h3>Teaching &amp; team sport</h3><p>Taught data literacy to 200+ students through the JP Morgan–Agastya Foundation program, and captained my football team to the Division II regional finals.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="eyebrow">Skills</div><h2>Tools & capabilities</h2></div>
+        <p>The stack behind the work above.</p>
+      </div>
+      <div class="skills">
+        <div class="skill-box reveal"><h4>Languages & Backend</h4><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">REST APIs</span><span class="chip">Flask</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Supabase</span></div></div>
+        <div class="skill-box reveal"><h4>Analytics &amp; BI</h4><div class="chips"><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Excel</span><span class="chip">ETL</span><span class="chip">Data Warehousing</span><span class="chip">Data Modeling</span><span class="chip">Snowflake</span></div></div>
+        <div class="skill-box reveal"><h4>Cloud & DevOps</h4><div class="chips"><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Jira</span><span class="chip">Netlify</span></div></div>
+        <div class="skill-box reveal"><h4>AI, QA & Growth</h4><div class="chips"><span class="chip">Machine Learning</span><span class="chip">Agentic AI</span><span class="chip">GIS</span><span class="chip">API & Unit Testing</span><span class="chip">Selenium</span><span class="chip">VAPT</span><span class="chip">SEO</span></div></div>
+      </div>
+      <div class="certs">
+        <div class="cert reveal">Microsoft Power BI Data Analyst Associate<span>2024</span></div>
+        <div class="cert reveal">Neo4j Certified Professional<span>2024</span></div>
+        <div class="cert reveal">NISM-Series-VIII: Equity Derivatives<span>2024</span></div>
+        <div class="cert reveal">AWS Cloud Practitioner Essentials<span>AWS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div class="eyebrow">Get in touch</div>
+        <h2>Have a system that needs building?</h2>
+        <p>Ordering platforms, data automation, dashboards or SEO — tell me what's slowing your business down and I'll reply within a day.</p>
+        <div class="c-grid">
+          <div class="c-item"><small>EMAIL</small><a href="mailto:omdesai02@gmail.com"><b>omdesai02@gmail.com</b></a><br><button class="copy" data-copy="omdesai02@gmail.com">Copy email</button></div>
+          <a class="c-item" href="https://wa.me/918779971812?text=Hi%20Om%2C%20I%20saw%20your%20portfolio." target="_blank" rel="noopener"><small>PHONE / WHATSAPP</small><b>+91 87799 71812</b></a>
+          <a class="c-item" href="https://linkedin.com/in/om-desai07" target="_blank" rel="noopener"><small>LINKEDIN</small><b>in/om-desai07 ↗</b></a>
+        </div>
+        <div class="cta" style="position:relative;z-index:1">
+          <a href="https://wa.me/918779971812?text=Hi%20Om%2C%20I%27d%20like%20to%20book%20a%20free%20call%20about%20a%20project." target="_blank" rel="noopener" class="btn btn-primary">Book a free call →</a>
+          <a href="mailto:omdesai02@gmail.com?subject=Project%20enquiry" class="btn" style="border-color:color-mix(in srgb,var(--bg) 25%,transparent)">Email me</a>
+          <a href="https://github.com/OmDesai1221" target="_blank" rel="noopener" class="btn" style="border-color:color-mix(in srgb,var(--bg) 25%,transparent)">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© <span id="yr"></span> Om Desai · Mumbai, India</span><span class="mono">Data · Systems · Shipped</span></div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+// theme toggle
+const root = document.documentElement;
+try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch(e){}
+document.getElementById('theme').onclick = () => {
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('theme', root.dataset.theme); } catch(e){}
+};
+// mobile menu
+const links = document.getElementById('links');
+document.getElementById('menu').onclick = () => links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remove('open'));
+// copy email
+document.querySelectorAll('.copy').forEach(b => b.onclick = () => {
+  navigator.clipboard?.writeText(b.dataset.copy).then(() => { b.textContent = 'Copied ✓'; setTimeout(() => b.textContent = 'Copy email', 1500); });
+});
+// reveal + counters
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add('in'); io.unobserve(e.target);
+}), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const co = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const el = e.target, end = +el.dataset.count, t0 = performance.now();
+  const step = t => { const p = Math.min((t - t0) / 1200, 1); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step); co.unobserve(el);
+}), {threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el => co.observe(el));
+</script>
+</body>
+</html>
