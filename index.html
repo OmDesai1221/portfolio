@@ -231,12 +231,85 @@ footer{padding:40px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+
+/* nav avatar */
+
+/* scroll progress */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+
+/* hero shell + live background */
+.hero-shell{position:relative;overflow:hidden;isolation:isolate}
+.live-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.live-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 82%,transparent) 38%,color-mix(in srgb,var(--bg) 30%,transparent) 62%,transparent 80%),
+  linear-gradient(0deg,var(--bg) 0%,transparent 22%)}
+.live-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.live-lines line{stroke:var(--accent);stroke-opacity:.28;stroke-width:1.2;stroke-dasharray:4 7;animation:flow 2.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-22}}
+.li{position:absolute;left:0;top:0;will-change:transform;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px 12px;font-size:11.5px;color:var(--ink);white-space:nowrap;opacity:.9}
+.li small{display:block;color:var(--muted);font-size:10px}
+.li .g{color:var(--good);font-weight:600}
+.li .a{color:var(--accent);font-weight:600}
+.li-phone{width:74px;height:138px;padding:7px;border-radius:18px;background:var(--ink);border:none}
+.li-phone .scr{width:100%;height:100%;border-radius:12px;background:var(--surface);padding:16px 6px 6px;display:grid;grid-template-columns:1fr 1fr;gap:5px;align-content:start;position:relative}
+.li-phone .scr i{aspect-ratio:1;border-radius:6px;background:var(--accent);opacity:.75}
+.li-phone .scr i:nth-child(3n){background:var(--good)}
+.li-phone .scr i:nth-child(4n){background:var(--muted);opacity:.4}
+.li-phone .notch{position:absolute;top:5px;left:50%;transform:translateX(-50%);width:24px;height:6px;border-radius:6px;background:var(--ink)}
+.li-phone .hole{position:absolute;top:5px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:50%;background:var(--ink)}
+.li-phone .os{position:absolute;bottom:5px;left:0;right:0;text-align:center;font-size:8px;color:var(--muted);font-family:"JetBrains Mono"}
+.li-bars{display:flex;align-items:end;gap:4px;height:42px;margin-top:6px}
+.li-bars b{width:9px;border-radius:3px 3px 1px 1px;background:var(--accent);animation:pulseBar 3.2s ease-in-out infinite}
+.li-bars b:nth-child(odd){opacity:.5;animation-delay:-1.4s}
+@keyframes pulseBar{50%{transform:scaleY(.72)}}
+.li-bars b{transform-origin:bottom}
+.li-route svg{display:block;width:150px;height:60px;margin-top:6px}
+.li-code{font-family:"JetBrains Mono";font-size:11px}
+@media (max-width:860px){.li.sm-hide{display:none}.li{font-size:10.5px}}
+
+/* hero layout with photo */
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.hero-text{min-width:0}
+.hero-photo{position:relative;z-index:1;justify-self:end;width:100%;max-width:380px}
+.photo-card{border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--surface-2);border:1px solid var(--line);box-shadow:0 30px 60px -20px rgba(0,0,0,.35)}
+.stage{background:var(--surface);padding:20px;display:flex;flex-direction:column;gap:14px;font-size:13px}
+.st-head{display:flex;justify-content:space-between;align-items:center;font-family:"Space Grotesk";font-size:16px}
+.st-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.st-kpis div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px}
+.st-kpis small{display:block;color:var(--muted);font-size:11px}
+.st-kpis b{font-family:"Space Grotesk";font-size:19px;letter-spacing:-.02em}
+.st-chart{flex:1;min-height:90px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 0 0;overflow:hidden}
+.st-chart svg{width:100%;height:100%;display:block}
+.st-area{fill:var(--accent);opacity:.12}
+.st-line{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linejoin:round;vector-effect:non-scaling-stroke;stroke-dasharray:420;animation:draw 6s ease-in-out infinite}
+@keyframes draw{0%{stroke-dashoffset:420}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:-420}}
+.st-list{display:grid;gap:6px}
+.st-list .pill:not(.ok):not(.go){background:var(--surface-2);color:var(--muted)}
+.st-foot{font-size:11px;color:var(--muted);text-align:center}
+#stOrders{transition:color .4s}
+#stOrders.bump{color:var(--good)}
+.float-chip{position:absolute;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:13px;font-weight:500;box-shadow:var(--shadow);white-space:nowrap;animation:bob 6s ease-in-out infinite}
+.float-chip .tick{color:var(--good);font-weight:700}
+.float-chip.c1{left:-70px;top:-3%}
+.float-chip.c2{right:-22px;top:52%;animation-delay:-2s}
+.float-chip.c3{left:-60px;bottom:-4%;animation-delay:-4s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-photo{display:none}
+}
+
+/* scroll-linked motion hooks */
+.project .visual{will-change:transform;transform-origin:50% 60%}
+.sec-head h2{will-change:transform}
+.track.js{animation:none}
 .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.progress{display:none}}
 </style>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <header>
   <div class="wrap">
@@ -261,22 +334,52 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <main id="main">
   <!-- HERO -->
-  <div class="wrap hero">
-    <span class="tag"><span class="dot"></span>Available for freelance projects · Mumbai / Remote</span>
-    <p class="role">Software Development Engineer &amp; Data Analyst</p>
-    <h1>I build the systems that keep a business <em>moving.</em></h1>
-    <p class="lead">I help businesses replace manual work and scattered spreadsheets with software they own: web, iOS and Android apps, order and delivery tracking systems, automated monthly reports, clear dashboards and websites that show up on Google.</p>
-    <p class="lead lead-2">You get a fixed quote before work starts, regular updates while I build, and support after launch.</p>
-    <div class="cta">
-      <a href="#work" class="btn btn-primary">View my work →</a>
-      <a href="#contact" class="btn btn-ghost">Discuss your project</a>
-    </div>
-    <div class="now">Also working as <b>Software Development Engineer &amp; Data Analyst at Aventior</b></div>
+  <div class="hero-shell">
+    <div class="live-bg" id="liveBg" aria-hidden="true"><svg class="live-lines" id="liveLines"></svg></div>
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="tag"><span class="dot"></span>Available for freelance projects · Mumbai / Remote</span>
+          <p class="role">Software Development Engineer &amp; Data Analyst</p>
+          <h1>I build the systems that keep a business <em>moving.</em></h1>
+          <p class="lead">I help businesses replace manual work and scattered spreadsheets with software they own: web, iOS and Android apps, order and delivery tracking systems, automated monthly reports, clear dashboards and websites that show up on Google.</p>
+          <p class="lead lead-2">You get a fixed quote before work starts, regular updates while I build, and support after launch.</p>
+          <div class="cta">
+            <a href="#work" class="btn btn-primary">View my work →</a>
+            <a href="#contact" class="btn btn-ghost">Discuss your project</a>
+          </div>
+          <div class="now">Also working as <b>Software Development Engineer &amp; Data Analyst at Aventior</b></div>
+        </div>
+        <div class="hero-photo" data-parallax="-0.12">
+          <div class="photo-card stage" role="img" aria-label="Example of a live operations dashboard">
+            <div class="st-head"><b>Operations · Today</b><span class="pill ok">● Live</span></div>
+            <div class="st-kpis">
+              <div><small>Orders</small><b id="stOrders">1,284</b></div>
+              <div><small>On time</small><b>96%</b></div>
+              <div><small>Collected</small><b>₹12.4L</b></div>
+            </div>
+            <div class="st-chart"><svg viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true">
+              <path class="st-area" d="M0 90 L30 80 L60 84 L90 62 L120 68 L150 46 L180 54 L210 34 L240 40 L270 18 L300 22 L300 110 L0 110Z"/>
+              <path class="st-line" d="M0 90 L30 80 L60 84 L90 62 L120 68 L150 46 L180 54 L210 34 L240 40 L270 18 L300 22"/>
+            </svg></div>
+            <div class="st-list">
+              <div class="row"><span>#4821 · Andheri W</span><span class="pill go">Out for delivery</span></div>
+              <div class="row"><span>#4820 · Bandra E</span><span class="pill ok">Delivered</span></div>
+              <div class="row"><span>#4819 · Powai</span><span class="pill">Packed</span></div>
+            </div>
+            <div class="st-foot">Sample dashboard · the kind of system I build</div>
+          </div>
+          <div class="float-chip c1"><span class="tick">✓</span>Deliveries tracked live</div>
+          <div class="float-chip c2">iOS · Android · Web</div>
+          <div class="float-chip c3"><span class="tick">✓</span>Month-end report ready</div>
+        </div>
+      </div>
     <div class="stats">
-      <div class="stat"><b data-count="200">200</b><span>+ secure API exchanges / day</span></div>
-      <div class="stat"><b data-count="15">15</b><span>+ KPI dashboards delivered</span></div>
-      <div class="stat"><b data-count="65">65</b><span>% faster data processing</span></div>
-      <div class="stat"><b data-count="8">8</b><span>TB of enterprise data cleaned</span></div>
+        <div class="stat"><b data-count="200">200</b><span>+ secure API exchanges / day</span></div>
+        <div class="stat"><b data-count="15">15</b><span>+ KPI dashboards delivered</span></div>
+        <div class="stat"><b data-count="65">65</b><span>% faster data processing</span></div>
+        <div class="stat"><b data-count="8">8</b><span>TB of enterprise data cleaned</span></div>
+      </div>
     </div>
   </div>
 
@@ -546,6 +649,116 @@ const co = new IntersectionObserver(es => es.forEach(e => {
   requestAnimationFrame(step); co.unobserve(el);
 }), {threshold:.5});
 document.querySelectorAll('[data-count]').forEach(el => co.observe(el));
+
+// ---------- motion ----------
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+// live hero background
+(function liveBg(){
+  const bg = document.getElementById('liveBg'), svg = document.getElementById('liveLines');
+  if (!bg) return;
+  const phone = os => `<div class="scr">${os==='iOS'?'<span class="notch"></span>':'<span class="hole"></span>'}<i></i><i></i><i></i><i></i><i></i><i></i><span class="os">${os}</span></div>`;
+  // dk: position on desktop in photo-width/height units from the photo's top-left; mb: px from the mobile avatar (or 'tr' = top-right). null = hidden.
+  const items = [
+    {h:phone('iOS'), c:'li-phone', dk:[-.58,-.5], mb:null, d:.6},
+    {h:'<span class="g">GET</span> /api/orders <span class="g">200 OK</span><small>42 ms</small>', c:'li-code', dk:[.05,-.42], mb:'tr', d:.3},
+    {h:'<b>Sales this month</b><div class="li-bars"><b style="height:40%"></b><b style="height:62%"></b><b style="height:50%"></b><b style="height:78%"></b><b style="height:66%"></b><b style="height:94%"></b></div>', c:'', dk:[.6,-.5], mb:null, d:.7},
+    {h:'<span class="g">✓</span> <b>Oct P&amp;L generated</b><small>214 GL rows matched · backup saved</small>', c:'', dk:[.33,-.2], mb:null, d:.4},
+    {h:phone('Android'), c:'li-phone', dk:[1.03,.66], mb:null, d:.9},
+    {h:'<b>Route · Riyadh North</b><svg viewBox="0 0 150 60"><path d="M8 50 C40 48 46 12 78 22 S120 46 142 10" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 4"/><circle r="4" fill="var(--good)"><animateMotion dur="6s" repeatCount="indefinite" path="M8 50 C40 48 46 12 78 22 S120 46 142 10"/></circle></svg>', c:'li-route', dk:[-.3,1.13], mb:null, d:.8},
+    {h:'<b>Collections</b> <span class="g">+18%</span><small>₹ 12.4L received this week</small>', c:'', dk:[.46,1.13], mb:null, d:.55},
+    {h:'<b>Order #4821</b> <span class="a">· Out for delivery</span><small>ETA 12 min · Driver assigned</small>', c:'', dk:[.28,1.3], mb:[-4,-86], d:.5},
+  ];
+  const links = [[0,1],[1,2],[1,3],[2,3],[5,6],[6,7],[5,7],[4,6],[1,7]];
+  const els = items.map(it => { const e = document.createElement('div'); e.className = 'li ' + it.c; e.innerHTML = it.h; bg.appendChild(e); return e; });
+  const lines = links.map(() => { const l = document.createElementNS('http://www.w3.org/2000/svg','line'); svg.appendChild(l); return l; });
+  const photo = document.querySelector('.hero-photo .photo-card'), av = document.querySelector('.hero .tag');
+  let W, H, sizes, anchor, mobile, mx = 0, my = 0, run = true, t0 = performance.now();
+  const rel = el => { const r = el.getBoundingClientRect(), b = bg.getBoundingClientRect(); return {x:r.left - b.left, y:r.top - b.top, w:r.width, h:r.height}; };
+  const measure = () => {
+    W = bg.clientWidth; H = bg.clientHeight; mobile = innerWidth <= 860;
+    anchor = rel(mobile ? av : photo);
+    els.forEach((e, i) => { e.style.display = (mobile ? items[i].mb : items[i].dk) ? '' : 'none'; });
+    sizes = els.map(e => [e.offsetWidth, e.offsetHeight]);
+  };
+  measure(); addEventListener('resize', measure); addEventListener('load', measure);
+  addEventListener('pointermove', e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, {passive:true});
+  const pos = new Array(items.length);
+  function frame(now){
+    const t = (now - t0) / 1000, sy = scrollY;
+    items.forEach((it, i) => {
+      const [w, h] = sizes[i], el = els[i], spot = mobile ? it.mb : it.dk;
+      if (!spot || !w) { pos[i] = null; return; }
+      let x, y;
+      if (mobile) { if (spot === 'tr') { x = W - w - 16; y = Math.max(4, anchor.y - h - 2); } else { x = anchor.x + spot[0]; y = anchor.y + spot[1]; } }
+      else { x = anchor.x + spot[0] * anchor.w; y = anchor.y + spot[1] * anchor.h; }
+      if (!reduce) {
+        const amp = mobile ? .4 : 1;
+        x += (Math.sin(t * .35 + i * 1.7) * 14 + mx * it.d * -36) * amp;
+        y += (Math.cos(t * .28 + i * 2.3) * 10 + my * it.d * -26) * amp - sy * it.d * .35;
+      }
+      el.style.transform = `translate3d(${x}px,${y}px,0) rotate(${reduce ? 0 : Math.sin(t*.2+i)*1.5}deg)`;
+      pos[i] = [x + w / 2, y + h / 2];
+    });
+    links.forEach(([a, b], k) => {
+      const l = lines[k];
+      if (!pos[a] || !pos[b]) { l.style.display = 'none'; return; }
+      l.style.display = '';
+      l.setAttribute('x1', pos[a][0]); l.setAttribute('y1', pos[a][1]);
+      l.setAttribute('x2', pos[b][0]); l.setAttribute('y2', pos[b][1]);
+    });
+    if (run && !reduce) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  if (!reduce) {
+    new IntersectionObserver(([e]) => { const was = run; run = e.isIntersecting && !document.hidden; if (run && !was) requestAnimationFrame(frame); }).observe(bg);
+    document.addEventListener('visibilitychange', () => { const was = run; run = !document.hidden; if (run && !was) requestAnimationFrame(frame); });
+  }
+})();
+
+// dashboard order counter
+(function(){ const el = document.getElementById('stOrders'); if (!el || reduce) return; let n = 1284;
+  setInterval(() => { if (document.hidden) return; n += 1 + Math.floor(Math.random()*2); el.textContent = n.toLocaleString('en-IN'); el.classList.add('bump'); setTimeout(() => el.classList.remove('bump'), 600); }, 3200); })();
+
+// scroll-linked motion
+(function scrollMotion(){
+  if (reduce) return;
+  const bar = document.getElementById('progress');
+  const par = [...document.querySelectorAll('[data-parallax]')];
+  const vis = [...document.querySelectorAll('.project .visual')];
+  const heads = [...document.querySelectorAll('.sec-head h2')];
+  const track = document.querySelector('.track'); track.classList.add('js');
+  let last = scrollY, vel = 0, dir = 1, mpos = 0, ticking = false;
+  function update(){
+    const vh = innerHeight, sy = scrollY, max = document.documentElement.scrollHeight - vh;
+    bar.style.transform = `scaleX(${max > 0 ? sy / max : 0})`;
+    par.forEach(el => { el.style.transform = `translate3d(0,${sy * +el.dataset.parallax}px,0)`; });
+    vis.forEach((el, i) => {
+      const r = el.getBoundingClientRect(), p = clamp((vh - r.top) / (vh * .5), 0, 1), e = 1 - Math.pow(1 - p, 3);
+      el.style.transform = `translateY(${(1 - e) * 40}px) scale(${.92 + .08 * e}) rotate(${(1 - e) * (i % 2 ? 2 : -2)}deg)`;
+    });
+    heads.forEach(el => {
+      const r = el.getBoundingClientRect(), p = clamp((vh - r.top) / (vh * .7), 0, 1);
+      el.style.transform = `translateX(${(1 - p) * -50}px)`;
+    });
+    ticking = false;
+  }
+  addEventListener('scroll', () => {
+    const d = scrollY - last; last = scrollY;
+    if (d) { dir = d > 0 ? 1 : -1; vel = Math.min(Math.abs(d), 60); }
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, {passive:true});
+  addEventListener('resize', update); update();
+  // marquee follows scroll direction and speeds up with scroll velocity
+  (function marquee(){
+    const half = track.scrollWidth / 2;
+    mpos -= (0.6 + vel * 0.25) * dir; vel *= 0.92;
+    if (mpos <= -half) mpos += half; if (mpos > 0) mpos -= half;
+    track.style.transform = `translate3d(${mpos}px,0,0)`;
+    if (!document.hidden) requestAnimationFrame(marquee); else document.addEventListener('visibilitychange', () => requestAnimationFrame(marquee), {once:true});
+  })();
+})();
 </script>
 </body>
 </html>
