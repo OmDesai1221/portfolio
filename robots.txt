@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://om-desai.netlify.app/sitemap.xml
