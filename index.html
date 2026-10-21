@@ -112,6 +112,8 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 
 /* sections */
 section{padding:96px 0}
+section[id]{scroll-margin-top:76px}
+#work{scroll-margin-top:0}
 .eyebrow{font-family:"JetBrains Mono";font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em}
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:44px}
 .sec-head h2{font-size:clamp(30px,4.5vw,48px);margin-top:10px;max-width:20ch}
@@ -131,7 +133,7 @@ section{padding:96px 0}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .chip{font-size:12px;padding:5px 10px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--muted)}
 .p-links{display:flex;gap:16px;margin-top:22px;font-weight:600;font-size:14px}
-.p-links a{color:var(--accent)} .p-links a:hover{text-decoration:underline}
+.p-links a{color:var(--accent);display:inline-block;padding:10px 0} .p-links a:hover{text-decoration:underline}
 .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:var(--accent);color:var(--accent-ink);margin-bottom:10px}
 
 /* mock visuals */
@@ -225,7 +227,8 @@ section{padding:96px 0}
 .c-item:hover{background:color-mix(in srgb,var(--bg) 8%,transparent)}
 .c-item small{opacity:.6;font-size:12px;display:block;font-family:"JetBrains Mono"}
 .c-item b{font-weight:600;word-break:break-all}
-.copy{margin-top:8px;font-size:12px;background:none;border:1px solid color-mix(in srgb,var(--bg) 25%,transparent);color:inherit;border-radius:8px;padding:4px 10px;cursor:pointer}
+.c-item a{display:inline-block;padding:6px 0}
+.copy{margin-top:8px;min-height:36px;font-size:12px;background:none;border:1px solid color-mix(in srgb,var(--bg) 25%,transparent);color:inherit;border-radius:8px;padding:8px 14px;cursor:pointer}
 
 footer{padding:40px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
@@ -895,7 +898,7 @@ const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
     });
     heads.forEach(el => {
       const r = el.getBoundingClientRect(), p = clamp((vh - r.top) / (vh * .7), 0, 1);
-      el.style.transform = `translateX(${(1 - p) * -50}px)`;
+      el.style.transform = `translateX(${(1 - p) * -Math.min(40, innerWidth * .025)}px)`;
     });
     ticking = false;
   }
