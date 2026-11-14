@@ -70,6 +70,32 @@ html.scrolly .si{position:absolute;left:0;top:0;width:var(--iw);transform:transl
 html.scrolly .hint{display:flex;position:absolute;left:50%;bottom:8px;z-index:4;transform:translateX(-50%);flex-direction:column;align-items:center;gap:6px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);pointer-events:none;transition:opacity .3s}
 @media (max-width:860px){html.scrolly .hint{display:none}}
 
+/* hero: content + small live system diagram, and a clear scroll cue */
+.hero-grid{grid-template-columns:minmax(0,1fr) minmax(240px,340px);align-items:center;column-gap:40px}
+.hero-grid .hero-main{min-width:0}
+.hero .hero-grid h1{font-size:clamp(34px,min(4.9vw,8.4vh),78px)}
+.hero-viz{text-align:center}
+.hsys{width:100%;height:auto;display:block;overflow:visible}
+.hsys .hl line{stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 5}
+.hsys .hring{fill:none;stroke:var(--accent);stroke-opacity:.45;stroke-width:1.2;stroke-dasharray:6 8;transform-origin:170px 150px;animation:hspin 14s linear infinite}
+@keyframes hspin{to{transform:rotate(360deg)}}
+.hsys .hcore{fill:var(--surface-2);stroke:var(--accent);stroke-width:2}
+.hsys .hcore-t{fill:var(--accent);font:600 15px var(--f-mono);text-anchor:middle}
+.hsys .hn rect{fill:var(--surface-2);stroke:var(--line);stroke-width:1.2;animation:hpulse 3.6s ease-in-out infinite;animation-delay:var(--d)}
+.hsys .hn text{fill:var(--ink);font:500 11.5px var(--f-mono);text-anchor:middle}
+@keyframes hpulse{0%,70%,100%{stroke:var(--line)}80%{stroke:var(--accent)}}
+.hsys .p1{fill:var(--accent)}.hsys .p2{fill:var(--accent-2)}
+.hcap{font-size:12.5px;color:var(--muted);margin-top:6px}
+.cue{grid-column:1/-1;display:none}
+html.scrolly .cue{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;font:500 13px var(--f-mono);color:var(--muted);letter-spacing:.04em}
+html.scrolly .cue i{font-style:normal;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{50%{transform:translateY(6px)}}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-viz{display:none}html.scrolly .cue{margin-top:16px}}
+@media (max-height:720px){html.scrolly .cue{margin-top:12px}}
+html.scrolly .hint{display:none}
+.hud em{font-style:normal;color:var(--muted);margin-left:10px;opacity:.85}
+@media (max-width:860px){.hud em{display:none}}
+
 /* ---------- fixed chrome ---------- */
 .bar{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);z-index:60}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
@@ -416,8 +442,9 @@ html.scrolly .mrow .dup{display:inline-block}
   <div class="hint" id="hint" aria-hidden="true"><i></i>Scroll</div>
 
   <!-- 01 HERO -->
-  <section class="scene hero" id="top" data-len="0.55" data-label="Intro">
-    <div class="si">
+  <section class="scene hero" id="top" data-len="0.3" data-stop="0" data-label="Intro">
+    <div class="si hero-grid">
+      <div class="hero-main">
       <span class="tag"><span class="dot"></span>Available for freelance projects · Mumbai / Remote</span>
       <p class="role">Software Development Engineer &amp; Data Analyst</p>
       <h1><span class="hw" style="--i:0">I</span> <span class="hw" style="--i:1">build</span> <span class="hw" style="--i:2">the</span> <span class="hw" style="--i:3">systems</span> <span class="hw" style="--i:4">that</span> <span class="hw" style="--i:5">keep</span> <span class="hw" style="--i:6">a</span> <span class="hw" style="--i:7">business</span> <em class="hw" style="--i:8">moving.</em></h1>
@@ -427,18 +454,30 @@ html.scrolly .mrow .dup{display:inline-block}
         <a href="#contact" class="btn btn-ghost">Discuss your project</a>
       </div>
       <div class="now">Also working as <b>Software Development Engineer &amp; Data Analyst at Aventior</b></div>
+      </div>
+      <aside class="hero-viz">
+        <svg class="hsys" viewBox="0 0 340 300" role="img" aria-label="Diagram: apps, tracking, APIs, reports and dashboards connected to one system">
+          <circle class="hring" cx="170" cy="150" r="52"/>
+          <g class="hl"><line x1="170" y1="150" x2="170.0" y2="38.0"/><line x1="170" y1="150" x2="276.5" y2="115.4"/><line x1="170" y1="150" x2="235.8" y2="240.6"/><line x1="170" y1="150" x2="104.2" y2="240.6"/><line x1="170" y1="150" x2="63.5" y2="115.4"/></g>
+          <circle r="3.4" class="p1"><animateMotion dur="2.2s" begin="0.00s" repeatCount="indefinite" path="M170 150 L170.0 38.0"/></circle><circle r="3.4" class="p2"><animateMotion dur="2.5s" begin="0.45s" repeatCount="indefinite" path="M276.5 115.4 L170 150"/></circle><circle r="3.4" class="p1"><animateMotion dur="2.8s" begin="0.90s" repeatCount="indefinite" path="M170 150 L235.8 240.6"/></circle><circle r="3.4" class="p2"><animateMotion dur="3.1s" begin="1.35s" repeatCount="indefinite" path="M104.2 240.6 L170 150"/></circle><circle r="3.4" class="p1"><animateMotion dur="3.4s" begin="1.80s" repeatCount="indefinite" path="M170 150 L63.5 115.4"/></circle>
+          <polygon class="hcore" points="199.4,167.0 170.0,184.0 140.6,167.0 140.6,133.0 170.0,116.0 199.4,133.0"/><text class="hcore-t" x="170" y="155">OD</text>
+          <g class="hn" style="--d:0.00s"><rect x="128.0" y="24.0" width="84" height="28" rx="8"/><text x="170.0" y="42.0">Apps</text></g><g class="hn" style="--d:0.35s"><rect x="234.5" y="101.4" width="84" height="28" rx="8"/><text x="276.5" y="119.4">Tracking</text></g><g class="hn" style="--d:0.70s"><rect x="193.8" y="226.6" width="84" height="28" rx="8"/><text x="235.8" y="244.6">APIs</text></g><g class="hn" style="--d:1.05s"><rect x="62.2" y="226.6" width="84" height="28" rx="8"/><text x="104.2" y="244.6">Reports</text></g><g class="hn" style="--d:1.40s"><rect x="21.5" y="101.4" width="84" height="28" rx="8"/><text x="63.5" y="119.4">Dashboards</text></g>
+        </svg>
+        <p class="hcap">One system, many parts. I build each of them.</p>
+      </aside>
+      <div class="cue" aria-hidden="true"><span>Scroll to explore my work</span><i>↓</i></div>
     </div>
   </section>
 
   <!-- 02 PITCH -->
-  <section class="scene pitch" id="pitch" data-len="0.95" data-label="What I do">
+  <section class="scene pitch" id="pitch" data-len="0.9" data-label="What I do">
     <div class="si">
       <p id="pitchText">I help businesses replace <em>manual work</em> and <em>scattered spreadsheets</em> with software they own. You get a <em>fixed quote</em> before work starts, <em>regular updates</em> while I build, and <em>support</em> after launch.</p>
     </div>
   </section>
 
   <!-- 03 BERAIN -->
-  <section class="scene proj s1 s2 s3 s4" id="work" data-nav="work" data-len="1.5" data-steps="4" data-label="Berain Water">
+  <section class="scene proj s1 s2 s3 s4" id="work" data-nav="work" data-len="1.4" data-steps="4" data-label="Berain Water">
     <div class="si two">
       <div class="txt">
         <div class="kick rv" style="--s:.02"><span class="badge">Flagship project</span><span>01 / 03 · App Development · Tracking</span><a class="klink" href="https://berain.com.sa/?lang=en" target="_blank" rel="noopener">Client site ↗</a></div>
@@ -479,7 +518,7 @@ html.scrolly .mrow .dup{display:inline-block}
   </section>
 
   <!-- 04 FINANCE -->
-  <section class="scene proj s1 s2 s3 s4" id="finance" data-nav="work" data-len="1.5" data-steps="4" data-label="Financial tool">
+  <section class="scene proj s1 s2 s3 s4" id="finance" data-nav="work" data-len="1.4" data-steps="4" data-label="Financial tool">
     <div class="si two">
       <div class="txt">
         <div class="kick rv" style="--s:.02"><span>02 / 03 · Finance Automation</span><a class="klink" href="https://github.com/OmDesai1221/Financial_auto" target="_blank" rel="noopener">GitHub ↗</a></div>
@@ -553,7 +592,7 @@ html.scrolly .mrow .dup{display:inline-block}
   </section>
 
   <!-- 06 MORE -->
-  <section class="scene more" id="more" data-nav="work" data-len="0.75" data-label="More projects">
+  <section class="scene more" id="more" data-nav="work" data-len="0.6" data-label="More projects">
     <div class="si">
       <div>
         <div class="eyebrow rv" style="--s:.04">More projects</div>
@@ -596,7 +635,7 @@ html.scrolly .mrow .dup{display:inline-block}
   </section>
 
   <!-- 08 PROCESS -->
-  <section class="scene s1 s2 s3 s4" id="process" data-nav="process" data-len="1.25" data-steps="4" data-label="Process">
+  <section class="scene s1 s2 s3 s4" id="process" data-nav="process" data-len="1.2" data-steps="4" data-label="Process">
     <div class="si">
       <div>
         <div class="eyebrow rv" style="--s:.03">How we'd work together</div>
@@ -614,7 +653,7 @@ html.scrolly .mrow .dup{display:inline-block}
   </section>
 
   <!-- 09 ABOUT -->
-  <section class="scene" id="about" data-nav="about" data-len="0.6" data-label="About">
+  <section class="scene" id="about" data-nav="about" data-len="0.5" data-label="About">
     <div class="si two">
       <div>
         <div class="eyebrow rv" style="--s:.03">About</div>
@@ -630,7 +669,7 @@ html.scrolly .mrow .dup{display:inline-block}
   </section>
 
   <!-- 10 SKILLS -->
-  <section class="scene" id="skills" data-nav="about" data-len="0.85" data-label="Skills">
+  <section class="scene" id="skills" data-nav="about" data-len="0.7" data-label="Skills">
     <div class="si" style="gap:0">
       <div>
         <div class="eyebrow rv" style="--s:.03">Skills &amp; numbers</div>
@@ -657,7 +696,7 @@ html.scrolly .mrow .dup{display:inline-block}
   </section>
 
   <!-- 11 CONTACT -->
-  <section class="scene contact" id="contact" data-nav="contact" data-len="0.5" data-label="Contact">
+  <section class="scene contact" id="contact" data-nav="contact" data-len="0.45" data-label="Contact">
     <div class="si" style="gap:0">
       <div class="eyebrow rv" style="--s:.05">Get in touch</div>
       <h2 class="rv" style="--s:.1">Have a system that needs building?</h2>
@@ -681,7 +720,7 @@ html.scrolly .mrow .dup{display:inline-block}
 </main>
 
 <nav class="dots" id="dots" aria-label="Sections"></nav>
-<div class="hud" id="hud" aria-hidden="true"><b id="hudN">01</b><i>/ 11</i><span id="hudL">Intro</span></div>
+<div class="hud" id="hud" aria-hidden="true"><b id="hudN">01</b><i>/ 11</i><span id="hudL">Intro</span><em id="hudX">Next: What I do ↓</em></div>
 
 <script>
 window.VARIANT = (function(){
@@ -871,9 +910,11 @@ function packet(c, from, to, p, lw){
 function frame(C, st, dtn, now){
   const N = C.N;
   let P, zoom, pk = -1;
+  const A = st.jump ? st.jump.a : st.i, B = st.jump ? st.jump.b : st.i + 1;
+  st.A = A; st.B = B;
   if (st.intro >= 0) { const ip = st.intro; P = -1 + C.smr(ip / .62); zoom = C.smr((ip - .52) / .48); }
   else if (st.u < 0) { P = st.i; zoom = 1; }
-  else { const u = st.u; P = st.i + C.smr((u - .2) / .6); zoom = Math.max(1 - C.smr(u / .3), C.smr((u - .7) / .3)); pk = C.clamp((u - .16) / .66); }
+  else { const u = st.u; let dB = B - A; if (st.jump) dB = ((dB % N) + N + N / 2) % N - N / 2; P = A + dB * C.smr((u - .2) / .6); zoom = Math.max(1 - C.smr(u / .3), C.smr((u - .7) / .3)); pk = C.clamp((u - .16) / .66); }
   const cm = cam(zoom), dom = {};
   const active = ((Math.round(P) % N) + N) % N;
   // the real cards
@@ -884,7 +925,7 @@ function frame(C, st, dtn, now){
     const w = G.tw * sl.s * cm.F, x = sl.x * cm.F + cm.tx, y = sl.y * cm.F + cm.ty;
     const tf = 'translate3d(' + (x - G.cw / 2).toFixed(1) + 'px,' + (y - G.ch / 2).toFixed(1) + 'px,0) scale(' + (w / G.cw).toFixed(4) + ')';
     const rest = st.u < 0 && st.intro < 0 && k === st.i;
-    const t = st.u < 0 ? (k === st.i ? st.t : 0) : (k === st.i ? 1 : 0);
+    const t = st.u < 0 ? (k === st.i ? st.t : 0) : st.jump ? (k === A ? st.jump.tA : k === B ? st.jump.tB : 0) : (k === st.i ? 1 : 0);
     const o = C.sm((zoom - .03) / .14); dom[k] = o;
     C.show(k, tf, o, t, rest);
   });
@@ -917,7 +958,7 @@ function drawOrbit(c, tiles, now, lw, P, st, pk, a){
     tiles.filter(t => t.z >= 0).sort((p, q) => p.z - q.z).forEach(t => tile(c, t, lw, Math.abs(t.d) < .5));
   } else {
     links(c, tiles, now, lw);
-    if (pk >= 0 && pk <= 1) packet(c, tiles[st.i], tiles[(st.i + 1) % C.N], C.smr(pk), lw);
+    if (pk >= 0 && pk <= 1) packet(c, tiles[st.A], tiles[((st.B % C.N) + C.N) % C.N], C.smr(pk), lw);
     coreNet(c, now, lw);
     tiles.slice().sort((p, q) => p.s - q.s).forEach(t => tile(c, t, lw, Math.abs(t.d) < .5));
   }
@@ -973,7 +1014,10 @@ $('#copy').onclick = e => { const b = e.currentTarget; navigator.clipboard && na
 const track = $('#track'), stage = $('#stage'), scenes = $$('.scene'), N = scenes.length, last = N - 1;
 C.scenes = scenes; C.N = N;
 const HOLD = scenes.map(s => +s.dataset.len || 1), STEPS = scenes.map(s => +s.dataset.steps || 0);
-const bar = $('#bar'), hudN = $('#hudN'), hudL = $('#hudL'), dotsEl = $('#dots'), hint = $('#hint');
+const SUB = scenes.map((s, i) => +s.dataset.sub || STEPS[i] || 0), STOPT = scenes.map(s => s.dataset.stop != null ? +s.dataset.stop : .8);
+let STOPS = [];
+function stopsOf(i){ const L = he[i] - hs[i]; if (SUB[i] > 1) return Array.from({length: SUB[i]}, (_, k) => hs[i] + L * (.1 + .74 * (k + .5) / SUB[i])); return [hs[i] + L * STOPT[i]]; }
+const bar = $('#bar'), hudN = $('#hudN'), hudL = $('#hudL'), hudX = $('#hudX'), dotsEl = $('#dots'), hint = $('#hint');
 const navLinks = $$('.links a[href^="#"]');
 const cvB = $('#back'), cvF = $('#front'); C.cB = cvB.getContext('2d'); C.cF = cvF.getContext('2d');
 let scrolly = false, hs = [], he = [], total = 0, TRL = 0;
@@ -989,10 +1033,15 @@ scenes.forEach((s, i) => {
 });
 const dots = $$('button', dotsEl);
 
-function landing(i){ if (!i) return 0; const L = he[i] - hs[i]; return hs[i] + (STEPS[i] ? .2 : .75) * L; }
+function landing(i){ return Math.round(stopsOf(i)[0]); }
+let jump = null;
 function go(i){
   if (!scrolly) { scenes[i].scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); return; }
-  scrollTo({top: track.offsetTop + landing(i), behavior: 'smooth'});
+  const a = C.active == null ? 0 : C.active, top = track.offsetTop + landing(i);
+  if (i === a || Math.abs(i - a) === 1) { scrollTo({top, behavior: 'smooth'}); return; }
+  const steps = Math.abs(((i - a) % N + N + N / 2) % N - N / 2);
+  jump = {a, b: i, t0: performance.now(), dur: 1300 + 110 * steps, tA: scenes[a]._t == null ? 1 : scenes[a]._t, tB: clamp((landing(i) - hs[i]) / (he[i] - hs[i]))};
+  scrollTo({top, behavior: 'instant'});
 }
 C.go = go;
 document.addEventListener('click', e => {
@@ -1088,6 +1137,7 @@ function layout(){
     TRL = (V.trl ? V.trl(C) : (C.mobile ? 1.05 : 1.15)) * C.H;
     let y = 0; scenes.forEach((s, i) => { hs[i] = y; he[i] = y + HOLD[i] * C.H; y = he[i] + TRL; });
     total = he[last]; track.style.height = (total + C.H) + 'px';
+    STOPS = []; scenes.forEach((s, i) => STOPS.push(...stopsOf(i))); STOPS = STOPS.map(Math.round).sort((p, q) => p - q);
   } else scenes.forEach(sc => fitViz(sc, 1e5));
   C.dirty = true;
 }
@@ -1127,6 +1177,7 @@ function hud(a){
   if (a === curIdx) return;
   curIdx = a; const sc = scenes[a]; C.active = a;
   hudN.textContent = String(a + 1).padStart(2, '0'); hudL.textContent = sc.dataset.label;
+  hudX.textContent = a < last ? 'Next: ' + scenes[a + 1].dataset.label + ' ↓' : 'You reached the end ✓';
   dots.forEach((d, i) => d.classList.toggle('cur', i === a));
   const nav = sc.dataset.nav; navLinks.forEach(l => l.classList.toggle('cur', !!nav && l.getAttribute('href') === '#' + nav));
 }
@@ -1141,11 +1192,16 @@ function frame(now){
     cur += (target - cur) * (1 - Math.pow(1 - (fine ? .1 : .17), dtn)); if (Math.abs(target - cur) < .3) cur = target;
     if (!introStart) introStart = now;
     if (C.introP < 1) C.introP = clamp((now - introStart) / (V.introMs || 2000));
-    const st = stateAt(cur);
+    let st = stateAt(cur);
+    if (jump) {
+      const p = (now - jump.t0) / jump.dur;
+      if (p >= 1) { jump = null; cur = target; st = stateAt(cur); }
+      else st = {i: jump.a, u: clamp(p), t: 1, jump};
+    }
     st.intro = (C.introP < 1 && st.u < 0 && st.i === 0) ? C.introP : -1;
     const m = C.mouse;
     if (fine) { const tx = m.x < -900 ? 0 : m.x / C.W - .5, ty = m.y < -900 ? 0 : m.y / C.H - .5; m.sx += (tx - m.sx) * .06; m.sy += (ty - m.sy) * .06; }
-    st.moving = cur !== lastCur || st.intro >= 0 || C.dirty || Math.abs(m.sx - (m._px || 0)) > .0005 || Math.abs(m.sy - (m._py || 0)) > .0005;
+    st.moving = !!st.jump || cur !== lastCur || st.intro >= 0 || C.dirty || Math.abs(m.sx - (m._px || 0)) > .0005 || Math.abs(m.sy - (m._py || 0)) > .0005;
     m._px = m.sx; m._py = m.sy; lastCur = cur;
     // when nothing moves, the ambient background only needs ~30 frames a second
     skip = !st.moving && !skip;
@@ -1154,7 +1210,7 @@ function frame(now){
     endFrame(); hud(a);
     C.dirty = false;
     bar.style.transform = 'scaleX(' + (total ? clamp(cur / total) : 0) + ')';
-    hint.style.opacity = clamp(1 - cur / 120) * (C.introP >= 1 ? 1 : 0);
+
   }
   requestAnimationFrame(frame);
 }
@@ -1162,15 +1218,13 @@ function frame(now){
 /* finish a transition when scrolling stops halfway */
 let snapTimer = 0, dir = 1, lastSY = scrollY, touching = false;
 function snap(){
-  if (!scrolly || touching) return;
+  if (!scrolly || touching || jump || !STOPS.length) return;
   const y = clamp(scrollY - track.offsetTop, 0, total);
-  for (let i = 0; i < last; i++) {
-    if (y > he[i] + 1 && y < hs[i + 1] - 1) {
-      const u = (y - he[i]) / TRL, fwd = dir > 0 ? u > .02 : u > .98;
-      scrollTo({top: track.offsetTop + (fwd ? hs[i + 1] + 2 : he[i] - 2), behavior: 'smooth'});
-      return;
-    }
-  }
+  let near = STOPS[0]; STOPS.forEach(v => { if (Math.abs(v - y) < Math.abs(near - y)) near = v; });
+  if (Math.abs(near - y) < 3) return;
+  let t = dir > 0 ? STOPS.find(v => v > y + 2) : [...STOPS].reverse().find(v => v < y - 2);
+  if (t == null) t = near;
+  scrollTo({top: track.offsetTop + t, behavior: 'smooth'});
 }
 addEventListener('scroll', () => { const y = scrollY; if (y !== lastSY) { dir = y > lastSY ? 1 : -1; lastSY = y; } clearTimeout(snapTimer); snapTimer = setTimeout(snap, fine ? 170 : 260); }, {passive: true});
 addEventListener('touchstart', () => { touching = true; clearTimeout(snapTimer); }, {passive: true});
